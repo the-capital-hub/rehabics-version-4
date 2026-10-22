@@ -1,0 +1,35 @@
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  fill="none"
+>
+  <rect
+    width="64"
+    height="64"
+    rx="16"
+    fill="#101112"
+  />
+
+  <path
+    d="M18 48V16H34C43 16 48 21 48 29C48 35 45 39 39 41L49 48H37L25 38V48H18Z"
+    fill="#7CD607"
+  />
+
+  <path
+    d="M25 23V32H33C37 32 40 30 40 27.5C40 24.5 37 23 33 23H25Z"
+    fill="#101112"
+  />
+
+  <path
+    d="M34 35L46 48H36L27 38"
+    fill="#7CD607"
+  />
+
+  <circle
+    cx="48"
+    cy="15"
+    r="4"
+    fill="#B5F56A"
+  />
+</svg>

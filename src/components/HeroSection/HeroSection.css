@@ -1,0 +1,878 @@
+
+.rehab-hero {
+  --hero-carbon: #101112;
+  --hero-green: #7cd607;
+  --hero-graphite: #292e37;
+  --hero-ivory: #f9f9f8;
+  --hero-muted: #aeb4be;
+  --hero-border: #3b414c;
+
+  position: relative;
+  isolation: isolate;
+  height: calc(100svh - 100px);
+  min-height: 660px;
+  /* max-height: 900px; */
+  padding: 16px 0;
+  overflow: hidden;
+  background: var(--hero-carbon);
+  color: var(--hero-ivory);
+  font-family: var(--font-body, "DM Sans", sans-serif);
+}
+
+.rehab-hero *,
+.rehab-hero *::before,
+.rehab-hero *::after {
+  box-sizing: border-box;
+}
+
+.rehab-hero a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rehab-hero-background {
+  position: absolute;
+  z-index: -5;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 77% 38%,
+      rgba(124, 214, 7, 0.075),
+      transparent 39%
+    ),
+    linear-gradient(115deg, #101112, #151716 65%, #101112);
+}
+
+.rehab-hero-grid {
+  position: absolute;
+  z-index: -4;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.rehab-hero-image {
+  position: absolute;
+  z-index: -3;
+  top: 0;
+  right: 0;
+  width: 68%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rehab-hero-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 34%;
+  filter: brightness(0.88) contrast(1.07) saturate(0.88);
+}
+
+.rehab-hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #101112 0%,
+      rgba(16, 17, 18, 0.94) 9%,
+      rgba(16, 17, 18, 0.57) 34%,
+      rgba(16, 17, 18, 0.06) 69%
+    ),
+    linear-gradient(
+      0deg,
+      #101112 0%,
+      rgba(16, 17, 18, 0.7) 17%,
+      transparent 50%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(16, 17, 18, 0.2),
+      transparent 25%
+    );
+}
+
+.rehab-hero-watermark {
+  position: absolute;
+  z-index: -2;
+  top: 22px;
+  right: -15px;
+  color: rgba(249, 249, 248, 0.035);
+  font-family: var(--font-heading, "Manrope", sans-serif);
+  font-size: clamp(100px, 17vw, 245px);
+  font-weight: 900;
+  letter-spacing: -10px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.rehab-hero-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(calc(100% - 60px), 1400px);
+  height: 100%;
+  min-height: 0;
+  margin: 0 auto;
+}
+
+.rehab-hero-main {
+  position: relative;
+  z-index: 2;
+  width: 68%;
+  padding-top: clamp(24px, 5vh, 56px);
+}
+
+.rehab-hero-copy {
+  max-width: 800px;
+}
+
+.rehab-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+  color: var(--hero-green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.rehab-hero-eyebrow-line {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 3px;
+  flex: 0 0 34px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #497f0b, var(--hero-green));
+  box-shadow: 0 0 12px rgba(124, 214, 7, 0.18);
+}
+
+.rehab-hero-eyebrow-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--hero-green);
+  transform: translateY(-50%);
+}
+
+.rehab-hero-copy h1 {
+  margin: 0;
+  color: var(--hero-ivory);
+  font-family: var(--font-heading, "Manrope", sans-serif);
+  font-size: clamp(42px, 4.7vw, 70px);
+  font-weight: 800;
+  letter-spacing: -2.8px;
+  line-height: 1.07;
+  text-wrap: balance;
+}
+
+.rehab-hero-heading-second {
+  display: inline-block;
+}
+
+.rehab-hero-heading-second > span {
+  color: var(--hero-green);
+}
+
+.rehab-hero-description {
+  max-width: 530px;
+  margin-top: 16px;
+  color: #b9bec5;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.rehab-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.rehab-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  min-height: 50px;
+  padding: 8px 13px 8px 17px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 800;
+  transition:
+    transform 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.rehab-hero-button:hover {
+  transform: translateY(-3px);
+}
+
+.rehab-hero-button-primary {
+  background: var(--hero-green);
+  color: #101112;
+  box-shadow: 0 5px 20px rgba(124, 214, 7, 0.08);
+}
+
+.rehab-hero-button-primary:hover {
+  background: #91e52b;
+  color: #101112;
+  box-shadow: 0 8px 24px rgba(124, 214, 7, 0.17);
+}
+
+.rehab-hero-button-secondary {
+  border-color: rgba(249, 249, 248, 0.22);
+  background: rgba(16, 17, 18, 0.42);
+  color: var(--hero-ivory);
+}
+
+.rehab-hero-button-secondary:hover {
+  border-color: var(--hero-green);
+  color: var(--hero-green);
+}
+
+/* Statistics */
+
+.rehab-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(100%, 620px);
+  margin-top: clamp(24px, 4vh, 42px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.rehab-hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 12px 12px 0 0;
+}
+
+.rehab-hero-stat + .rehab-hero-stat {
+  padding-left: 18px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.rehab-hero-stat strong {
+  color: var(--hero-ivory);
+  font-family: var(--font-heading, "Manrope", sans-serif);
+  font-size: clamp(25px, 2.5vw, 34px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.rehab-hero-stat span {
+  color: var(--hero-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Image labels */
+
+.rehab-hero-image-note {
+  position: absolute;
+  z-index: 3;
+  top: 35%;
+  right: 1%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 13px;
+  background: rgba(16, 17, 18, 0.68);
+  backdrop-filter: blur(12px);
+}
+
+.rehab-hero-image-note-icon {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 11px;
+  background: rgba(124, 214, 7, 0.12);
+  color: var(--hero-green);
+}
+
+.rehab-hero-image-note > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rehab-hero-image-note small {
+  color: var(--hero-muted);
+  font-size: 12px;
+}
+
+.rehab-hero-image-note strong {
+  color: var(--hero-ivory);
+  font-size: 12px;
+}
+
+.rehab-hero-story {
+  position: absolute;
+  z-index: 3;
+  top: 55%;
+  right: 1%;
+}
+
+.rehab-hero-story-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 13px;
+  background: rgba(16, 17, 18, 0.72);
+  transition: border-color 200ms ease, background 200ms ease;
+  backdrop-filter: blur(12px);
+}
+
+.rehab-hero-story-link:hover {
+  border-color: rgba(124, 214, 7, 0.4);
+  background: rgba(41, 46, 55, 0.88);
+}
+
+.rehab-hero-story-play {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  border: 1px solid var(--hero-green);
+  border-radius: 50%;
+  color: var(--hero-green);
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.rehab-hero-story-link:hover .rehab-hero-story-play {
+  background: var(--hero-green);
+  color: var(--hero-carbon);
+}
+
+.rehab-hero-story-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rehab-hero-story-copy small {
+  color: var(--hero-muted);
+  font-size: 12px;
+}
+
+.rehab-hero-story-copy strong {
+  color: var(--hero-ivory);
+  font-size: 13px;
+}
+
+.rehab-hero-story-arrow {
+  color: var(--hero-muted);
+}
+
+/* Service cards */
+
+.rehab-hero-services {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.rehab-hero-service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 168px;
+  padding: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  border-radius: 15px;
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(124, 214, 7, 0.055),
+      transparent 55%
+    ),
+    linear-gradient(145deg, rgba(35, 39, 36, 0.97), rgba(19, 21, 22, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 10px 25px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 230ms ease,
+    border-color 230ms ease,
+    box-shadow 230ms ease;
+}
+
+.rehab-hero-service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 14px;
+  left: 14px;
+  height: 2px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(90deg, transparent, var(--hero-green), transparent);
+  opacity: 0;
+  transition: opacity 230ms ease;
+}
+
+.rehab-hero-service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(124, 214, 7, 0.45);
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.25),
+    0 0 22px rgba(124, 214, 7, 0.04);
+}
+
+.rehab-hero-service-card:hover::before {
+  opacity: 1;
+}
+
+.rehab-hero-service-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.rehab-hero-service-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  border: 1px solid rgba(124, 214, 7, 0.12);
+  border-radius: 12px;
+  background: rgba(124, 214, 7, 0.105);
+  color: var(--hero-green);
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.rehab-hero-service-card:hover .rehab-hero-service-icon {
+  transform: scale(1.04);
+  background: rgba(124, 214, 7, 0.17);
+}
+
+.rehab-hero-service-number {
+  color: rgba(249, 249, 248, 0.46);
+  font-family: var(--font-heading, "Manrope", sans-serif);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.rehab-hero-service-card h2 {
+  color: var(--hero-ivory);
+  font-family: var(--font-heading, "Manrope", sans-serif);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+.rehab-hero-service-card p {
+  margin-top: 7px;
+  color: var(--hero-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.rehab-hero-service-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+  color: var(--hero-green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rehab-hero-service-link svg {
+  transition: transform 200ms ease;
+}
+
+.rehab-hero-service-card:hover .rehab-hero-service-link svg {
+  transform: translateX(4px);
+}
+
+/* Bottom assurance */
+
+.rehab-hero-assurance {
+  position: absolute;
+  right: 0;
+  bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(249, 249, 248, 0.66);
+  font-size: 12px;
+  letter-spacing: 0.8px;
+}
+
+.rehab-hero-assurance svg {
+  color: var(--hero-green);
+}
+
+.rehab-hero-bottom-glow {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  background: linear-gradient(0deg, rgba(124, 214, 7, 0.055), transparent);
+  pointer-events: none;
+}
+
+/* Compact desktop */
+
+@media (max-height: 780px) and (min-width: 1001px) {
+  .rehab-hero {
+    min-height: 620px;
+    padding: 12px 0;
+  }
+
+  .rehab-hero-main {
+    padding-top: 20px;
+  }
+
+  .rehab-hero-eyebrow {
+    margin-bottom: 12px;
+  }
+
+  .rehab-hero-copy h1 {
+    font-size: clamp(39px, 4vw, 56px);
+  }
+
+  .rehab-hero-description {
+    max-width: 470px;
+    margin-top: 11px;
+    font-size: 13px;
+  }
+
+  .rehab-hero-actions {
+    margin-top: 14px;
+  }
+
+  .rehab-hero-stats {
+    margin-top: 22px;
+  }
+
+  .rehab-hero-service-card {
+    min-height: 145px;
+    padding: 12px;
+  }
+
+  .rehab-hero-service-top {
+    margin-bottom: 9px;
+  }
+
+  .rehab-hero-service-icon {
+    width: 37px;
+    height: 37px;
+    flex-basis: 37px;
+  }
+
+  .rehab-hero-image-note {
+    top: 31%;
+  }
+
+  .rehab-hero-story {
+    top: 49%;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .rehab-hero {
+    height: auto;
+    min-height: 760px;
+    max-height: none;
+  }
+
+  .rehab-hero-inner {
+    height: auto;
+    min-height: 720px;
+  }
+
+  .rehab-hero-main {
+    width: 76%;
+    padding-top: 35px;
+  }
+
+  .rehab-hero-copy h1 {
+    font-size: clamp(40px, 5.6vw, 58px);
+    letter-spacing: -2px;
+  }
+
+  .rehab-hero-image {
+    width: 72%;
+    height: 600px;
+  }
+
+  .rehab-hero-image-note {
+    top: 39%;
+    right: 0;
+  }
+
+  .rehab-hero-story {
+    top: 53%;
+    right: 0;
+  }
+
+  .rehab-hero-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    bottom: 0;
+  }
+
+  .rehab-hero-service-card {
+    min-height: 145px;
+  }
+
+  .rehab-hero-assurance {
+    bottom: 8px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .rehab-hero {
+    height: auto;
+    min-height: 0;
+    padding: 12px 0 20px;
+    overflow: hidden;
+  }
+
+  .rehab-hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: calc(100% - 32px);
+    min-height: 0;
+  }
+
+  .rehab-hero-image {
+    top: 0;
+    right: -10%;
+    width: 100%;
+    height: 450px;
+    opacity: 0.72;
+  }
+
+  .rehab-hero-image img {
+    object-position: 58% center;
+  }
+
+  .rehab-hero-image-overlay {
+    background:
+      linear-gradient(90deg, #101112 0%, rgba(16, 17, 18, 0.75) 32%, rgba(16, 17, 18, 0.12) 100%),
+      linear-gradient(0deg, #101112 0%, rgba(16, 17, 18, 0.3) 35%, transparent 100%);
+  }
+
+  .rehab-hero-watermark {
+    top: 25px;
+    right: -8px;
+    font-size: 75px;
+    letter-spacing: -4px;
+  }
+
+  .rehab-hero-main {
+    width: 100%;
+    padding-top: 22px;
+  }
+
+  .rehab-hero-eyebrow {
+    gap: 12px;
+    margin-bottom: 14px;
+    letter-spacing: 1.2px;
+  }
+
+  .rehab-hero-copy h1 {
+    font-size: clamp(34px, 8.6vw, 48px);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+  }
+
+  .rehab-hero-desktop-break {
+    display: none;
+  }
+
+  .rehab-hero-heading-second {
+    display: inline;
+  }
+
+  .rehab-hero-description {
+    max-width: 430px;
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .rehab-hero-actions {
+    gap: 9px;
+    margin-top: 17px;
+  }
+
+  .rehab-hero-button {
+    min-height: 46px;
+    gap: 9px;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .rehab-hero-stats {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .rehab-hero-stat {
+    gap: 6px;
+    padding: 12px 7px 0 0;
+  }
+
+  .rehab-hero-stat + .rehab-hero-stat {
+    padding-left: 10px;
+  }
+
+  .rehab-hero-stat strong {
+    font-size: clamp(22px, 5.8vw, 29px);
+  }
+
+  .rehab-hero-stat span {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .rehab-hero-image-note,
+  .rehab-hero-story {
+    position: relative;
+    inset: auto;
+    align-self: flex-start;
+    margin: 0;
+  }
+
+  .rehab-hero-image-note {
+    margin-top: -2px;
+  }
+
+  .rehab-hero-services {
+    position: relative;
+    inset: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .rehab-hero-service-card {
+    min-height: 155px;
+    padding: 12px;
+    border-radius: 13px;
+  }
+
+  .rehab-hero-service-top {
+    margin-bottom: 9px;
+  }
+
+  .rehab-hero-service-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .rehab-hero-service-card h2 {
+    font-size: 13px;
+  }
+
+  .rehab-hero-service-card p {
+    font-size: 12px;
+  }
+
+  .rehab-hero-service-link {
+    padding-top: 10px;
+  }
+
+  .rehab-hero-assurance {
+    position: relative;
+    inset: auto;
+    align-self: flex-start;
+    margin-top: -4px;
+    font-size: 12px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 370px) {
+  .rehab-hero-inner {
+    width: calc(100% - 24px);
+  }
+
+  .rehab-hero-copy h1 {
+    font-size: 32px;
+  }
+
+  .rehab-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rehab-hero-button {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .rehab-hero-service-card {
+    padding: 10px;
+  }
+
+  .rehab-hero-service-card h2 {
+    font-size: 12px;
+  }
+}
+
+/* Keyboard and motion accessibility */
+
+.rehab-hero a:focus-visible {
+  outline: 2px solid var(--hero-green);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rehab-hero *,
+  .rehab-hero *::before,
+  .rehab-hero *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

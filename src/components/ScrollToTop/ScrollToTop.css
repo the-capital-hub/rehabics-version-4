@@ -1,0 +1,53 @@
+
+.rv3ScrollTop {
+  position: fixed;
+  right: 27px;
+  bottom: 160px;
+  z-index: 9997;
+
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+
+  border: 1px solid rgba(216, 236, 232, 0.55);
+  border-radius: 15px;
+
+  color: #ffffff;
+  background: linear-gradient(145deg, #078985, #003f47);
+
+  box-shadow:
+    0 8px 24px rgba(0, 63, 71, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.rv3ScrollTop:hover {
+  background: #103541;
+  box-shadow: 0 11px 28px rgba(0, 63, 71, 0.3);
+}
+
+.rv3ScrollTop:focus-visible {
+  outline: 3px solid #078985;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .rv3ScrollTop {
+    right: 17px;
+    bottom: 145px;
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv3ScrollTop {
+    transition: none;
+  }
+}

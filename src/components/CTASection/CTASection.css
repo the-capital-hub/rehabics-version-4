@@ -1,0 +1,488 @@
+
+.rv3CTASection {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  background: var(--rv3-pearl, #f7faf9);
+}
+
+.rv3CTAContainer {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.rv3CTACard {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  align-items: center;
+  gap: 24px;
+  min-height: 410px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(216, 236, 232, 0.18);
+  border-radius: 28px;
+  background: linear-gradient(125deg, #123c46 0%, #174f57 56%, #247c7b 100%);
+  box-shadow: 0 24px 65px rgba(18, 60, 70, 0.15);
+}
+
+.rv3CTAContent {
+  position: relative;
+  z-index: 3;
+  max-width: 650px;
+}
+
+.rv3CTAEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  color: #c8eeea;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  line-height: 1.5;
+}
+
+.rv3CTAEyebrow svg {
+  flex-shrink: 0;
+}
+
+.rv3CTACard h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Lora", Georgia, serif;
+  font-size: clamp(30px, 4vw, 49px);
+  font-weight: 600;
+  letter-spacing: -1.3px;
+  line-height: 1.16;
+}
+
+.rv3CTACard h2 span {
+  color: #a9e0d8;
+}
+
+.rv3CTADescription {
+  max-width: 570px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.79);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.rv3CTAActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.rv3CTAPrimaryButton,
+.rv3CTASecondaryButton {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 19px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.rv3CTAPrimaryButton {
+  color: #123c46;
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.rv3CTAPrimaryButton:hover {
+  transform: translateY(-3px);
+  color: #123c46;
+  background: #d8ece8;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.16);
+}
+
+.rv3CTASecondaryButton {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.rv3CTASecondaryButton:hover {
+  transform: translateY(-3px);
+  color: #123c46;
+  border-color: #ffffff;
+  background: #ffffff;
+}
+
+.rv3CTAPrimaryButton:focus-visible,
+.rv3CTASecondaryButton:focus-visible {
+  outline: 3px solid #a9e0d8;
+  outline-offset: 4px;
+}
+
+.rv3CTANote {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.rv3CTAStatusDot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #a9e0d8;
+  box-shadow: 0 0 0 5px rgba(169, 224, 216, 0.12);
+}
+
+.rv3CTAVisual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  min-height: 310px;
+  align-items: center;
+  justify-content: center;
+}
+
+.rv3CTAIconCircle {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 170px;
+  height: 170px;
+  align-items: center;
+  justify-content: center;
+  color: #d8ece8;
+  border: 1px solid rgba(216, 236, 232, 0.38);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 25%,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.035) 68%
+  );
+  box-shadow:
+    0 0 0 18px rgba(216, 236, 232, 0.035),
+    0 0 70px rgba(169, 224, 216, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.rv3CTAOrbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(216, 236, 232, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.rv3CTAOrbitOuter {
+  width: 290px;
+  height: 290px;
+}
+
+.rv3CTAOrbitInner {
+  width: 225px;
+  height: 225px;
+  border-style: dashed;
+  border-color: rgba(216, 236, 232, 0.22);
+}
+
+.rv3CTAFloatingCard {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 190px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 15px 35px rgba(7, 36, 42, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+.rv3CTAFloatingTop {
+  top: 30px;
+  right: 0;
+}
+
+.rv3CTAFloatingBottom {
+  bottom: 28px;
+  left: 0;
+}
+
+.rv3CTAFloatingIcon,
+.rv3CTAProgressIcon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.rv3CTAFloatingIcon {
+  color: #247c7b;
+  background: #e5f3f0;
+}
+
+.rv3CTAProgressIcon {
+  color: #123c46;
+  background: #e9eff2;
+}
+
+.rv3CTAFloatingCard strong,
+.rv3CTAFloatingCard small {
+  display: block;
+}
+
+.rv3CTAFloatingCard strong {
+  color: #123c46;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.rv3CTAFloatingCard small {
+  margin-top: 3px;
+  color: #687a7d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.rv3CTAGlow {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.rv3CTAGlowOne {
+  top: -170px;
+  right: 12%;
+  width: 360px;
+  height: 360px;
+  background: rgba(111, 204, 190, 0.13);
+}
+
+.rv3CTAGlowTwo {
+  right: 30%;
+  bottom: -260px;
+  width: 430px;
+  height: 430px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.rv3CTADecoration {
+  position: absolute;
+  z-index: 0;
+  border: 1px solid rgba(216, 236, 232, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.rv3CTADecorationOne {
+  top: -70px;
+  left: 42%;
+  width: 150px;
+  height: 150px;
+}
+
+.rv3CTADecorationTwo {
+  right: 15%;
+  bottom: -90px;
+  width: 190px;
+  height: 190px;
+}
+
+@media (min-width: 1400px) {
+  .rv3CTAContainer {
+    width: min(1240px, calc(100% - 60px));
+  }
+}
+
+@media (max-width: 900px) {
+  .rv3CTACard {
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 0.75fr);
+    gap: 12px;
+    padding: 25px;
+  }
+
+  .rv3CTACard h2 {
+    font-size: clamp(29px, 4.2vw, 40px);
+  }
+
+  .rv3CTAVisual {
+    min-height: 270px;
+  }
+
+  .rv3CTAIconCircle {
+    width: 135px;
+    height: 135px;
+  }
+
+  .rv3CTAIconCircle svg {
+    width: 56px;
+    height: 56px;
+  }
+
+  .rv3CTAOrbitOuter {
+    width: 235px;
+    height: 235px;
+  }
+
+  .rv3CTAOrbitInner {
+    width: 185px;
+    height: 185px;
+  }
+
+  .rv3CTAFloatingCard {
+    min-width: 165px;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .rv3CTAFloatingTop {
+    right: -8px;
+  }
+
+  .rv3CTAFloatingBottom {
+    left: -8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .rv3CTASection {
+    padding: 16px 0;
+  }
+
+  .rv3CTAContainer {
+    width: calc(100% - 28px);
+  }
+
+  .rv3CTACard {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    min-height: auto;
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .rv3CTAEyebrow {
+    margin-bottom: 14px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .rv3CTACard h2 {
+    font-size: clamp(29px, 8vw, 38px);
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+  }
+
+  .rv3CTADescription {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .rv3CTAActions {
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .rv3CTAPrimaryButton,
+  .rv3CTASecondaryButton {
+    min-height: 46px;
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .rv3CTANote {
+    margin-top: 18px;
+  }
+
+  .rv3CTAVisual {
+    min-height: 260px;
+    margin-top: 6px;
+  }
+
+  .rv3CTAIconCircle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .rv3CTAOrbitOuter {
+    width: 225px;
+    height: 225px;
+  }
+
+  .rv3CTAOrbitInner {
+    width: 175px;
+    height: 175px;
+  }
+
+  .rv3CTAFloatingTop {
+    top: 14px;
+    right: 0;
+  }
+
+  .rv3CTAFloatingBottom {
+    bottom: 12px;
+    left: 0;
+  }
+
+  .rv3CTAGlowOne {
+    right: -120px;
+  }
+}
+
+@media (max-width: 380px) {
+  .rv3CTACard {
+    padding: 22px 16px;
+  }
+
+  .rv3CTAActions {
+    flex-direction: column;
+  }
+
+  .rv3CTAPrimaryButton,
+  .rv3CTASecondaryButton {
+    width: 100%;
+  }
+
+  .rv3CTAFloatingCard {
+    min-width: 155px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv3CTAPrimaryButton,
+  .rv3CTASecondaryButton {
+    transition: none;
+  }
+}

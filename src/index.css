@@ -1,0 +1,397 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* Rehabics V4 Design System */
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #FCFCFA;
+  background: #101112;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Brand Colors */
+  --carbon: #101112;
+  --page-bg: #0B0C0C;
+  --pistachio: #7CD607;
+  --graphite: #292E37;
+  --ivory: #F9F9F8;
+  --muted: #AEB4BE;
+  --border: #3B414C;
+
+  /* Typography */
+  --font-heading: 'Manrope', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Layout */
+  --container-width: 1240px;
+  --page-gutter: 20px;
+  --section-space: 20px;
+
+  /* UI */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* Motion */
+  --transition-fast: 180ms ease;
+  --transition-normal: 280ms ease;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  background: var(--carbon);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--carbon);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.1px;
+}
+
+#root {
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--ivory);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.12;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 76px);
+  letter-spacing: -2.4px;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 52px);
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  font-size: clamp(22px, 2.5vw, 32px);
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}
+
+strong,
+b {
+  color: var(--ivory);
+  font-weight: 700;
+}
+
+small {
+  font-size: 12px;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:hover {
+  color: var(--pistachio);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 22px;
+}
+
+::selection {
+  background: var(--pistachio);
+  color: var(--carbon);
+}
+
+/* Layout */
+.container {
+  width: min(
+    calc(100% - (var(--page-gutter) * 2)),
+    var(--container-width)
+  );
+  margin-inline: auto;
+}
+
+section {
+  padding-block: var(--section-space);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--pistachio);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.section-label::before {
+  width: 22px;
+  height: 2px;
+  background: var(--pistachio);
+  content: '';
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 11px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.btn-primary {
+  border-color: var(--pistachio);
+  background: var(--pistachio);
+  color: #101112;
+}
+
+.btn-primary:hover {
+  border-color: #94E62E;
+  background: #94E62E;
+  color: #101112;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border-color: var(--border);
+  background: transparent;
+  color: var(--ivory);
+}
+
+.btn-secondary:hover {
+  border-color: var(--pistachio);
+  color: var(--pistachio);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--graphite);
+  transition:
+    border-color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.card:hover {
+  border-color: rgba(124, 214, 7, 0.5);
+  transform: translateY(-3px);
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  outline: none;
+  background: #181A1E;
+  color: var(--ivory);
+  font-size: 14px;
+  transition: border-color var(--transition-fast);
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #858C97;
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--pistachio);
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  width: 18px;
+  min-height: 18px;
+  accent-color: var(--pistachio);
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #454950 #101112;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #101112;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #101112;
+  border-radius: 10px;
+  background: #454950;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pistachio);
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--pistachio);
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-gutter: 14px;
+    --section-space: 16px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 10vw, 54px);
+    letter-spacing: -1.5px;
+  }
+
+  h2 {
+    font-size: clamp(28px, 7vw, 40px);
+    letter-spacing: -0.8px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-height: 44px;
+    padding: 11px 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --page-gutter: 12px;
+  }
+
+  h1 {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
