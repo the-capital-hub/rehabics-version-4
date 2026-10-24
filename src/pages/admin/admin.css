@@ -1,0 +1,1040 @@
+:root {
+  --carbon: #101112;
+  --page-bg: #0b0c0c;
+  --pistachio: #7cd607;
+  --graphite: #292e37;
+  --ivory: #f9f9f8;
+  --muted: #aeb4be;
+  --border: #3b414c;
+}
+.rv4-admin-shell {
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--ivory);
+  display: flex;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.rv4-admin-shell * {
+  box-sizing: border-box;
+}
+.rv4-admin-sidebar {
+  width: 258px;
+  flex: 0 0 258px;
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  background: #101112;
+  border-right: 1px solid var(--border);
+  padding: 18px 14px;
+}
+.rv4-admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 2px 8px 22px;
+  border-bottom: 1px solid rgba(174, 180, 190, 0.14);
+}
+.rv4-admin-brand-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--pistachio);
+  color: #101112;
+}
+.rv4-admin-brand strong {
+  display: block;
+  letter-spacing: 0.12em;
+  font-size: 15px;
+}
+.rv4-admin-brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.11em;
+  margin-top: 1px;
+}
+.rv4-admin-mobile-close,
+.rv4-admin-menu-toggle,
+.rv4-admin-scrim {
+  display: none;
+}
+.rv4-admin-workspace {
+  margin: 19px 2px 25px;
+  padding: 12px;
+  background: #191c1f;
+  border: 1px solid #2b3035;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rv4-admin-workspace-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #28341c;
+  color: var(--pistachio);
+}
+.rv4-admin-workspace b,
+.rv4-admin-workspace small {
+  display: block;
+}
+.rv4-admin-workspace b {
+  font-size: 13px;
+}
+.rv4-admin-workspace small {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+.rv4-admin-nav-label {
+  font-size: 12px;
+  letter-spacing: 0.13em;
+  color: #7f8791;
+  padding: 0 12px 9px;
+}
+.rv4-admin-nav {
+  display: grid;
+  gap: 5px;
+}
+.rv4-admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  color: #aeb4be;
+  text-decoration: none;
+  font-size: 13px;
+  transition:
+    background 0.18s,
+    color 0.18s;
+}
+.rv4-admin-nav-link:hover {
+  background: #1d2125;
+  color: var(--ivory);
+}
+.rv4-admin-nav-link.active {
+  background: rgba(124, 214, 7, 0.12);
+  color: var(--pistachio);
+  box-shadow: inset 3px 0 0 var(--pistachio);
+}
+.rv4-admin-nav-link span {
+  flex: 1;
+}
+.rv4-admin-nav-chevron {
+  opacity: 0.65;
+}
+.rv4-admin-sidebar-bottom {
+  margin-top: auto;
+}
+.rv4-admin-secure {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 10px;
+  border-top: 1px solid rgba(174, 180, 190, 0.14);
+}
+.rv4-admin-secure-dot,
+.rv4-admin-welcome-chip span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pistachio);
+  box-shadow: 0 0 0 4px rgba(124, 214, 7, 0.1);
+}
+.rv4-admin-secure b,
+.rv4-admin-secure small {
+  display: block;
+}
+.rv4-admin-secure b {
+  font-size: 12px;
+}
+.rv4-admin-secure small {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+.rv4-admin-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: #d7dbe0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+.rv4-admin-logout:hover {
+  border-color: #8a4444;
+  color: #ffb8b8;
+}
+.rv4-admin-main-wrap {
+  min-width: 0;
+  flex: 1;
+  margin-left: 258px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.rv4-admin-topbar {
+  height: 68px;
+  flex: 0 0 68px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 30px;
+  border-bottom: 1px solid rgba(174, 180, 190, 0.15);
+  background: rgba(16, 17, 18, 0.9);
+}
+.rv4-admin-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8d96a0;
+  font-size: 12px;
+}
+.rv4-admin-breadcrumb strong {
+  color: #e5e7e9;
+  font-weight: 500;
+}
+.rv4-admin-top-user {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rv4-admin-avatar {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  background: #28341c;
+  color: var(--pistachio);
+  border: 1px solid #465b2b;
+  border-radius: 50%;
+  font-weight: 700;
+}
+.rv4-admin-top-user b,
+.rv4-admin-top-user small {
+  display: block;
+}
+.rv4-admin-top-user b {
+  font-size: 12px;
+}
+.rv4-admin-top-user small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.rv4-admin-content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 26px 30px 22px;
+  flex: 1;
+}
+.rv4-admin-footer {
+  padding: 14px 30px 18px;
+  color: #737d87;
+  font-size: 12px;
+}
+.rv4-admin-footer span {
+  padding: 0 7px;
+  color: var(--pistachio);
+}
+.rv4-admin-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+.rv4-admin-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--pistachio);
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+.rv4-admin-eyebrow span {
+  width: 20px;
+  height: 2px;
+  background: var(--pistachio);
+}
+.rv4-admin-page-head h1 {
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  margin: 0;
+  font-weight: 650;
+}
+.rv4-admin-page-head p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.rv4-admin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.rv4-admin-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.rv4-admin-button-secondary {
+  background: #171a1d;
+  border-color: var(--border);
+  color: #e3e6e9;
+}
+.rv4-admin-button-secondary:hover {
+  border-color: #68727c;
+}
+.rv4-admin-button-primary {
+  background: var(--pistachio);
+  color: #11140c;
+}
+.rv4-admin-button-primary:hover {
+  background: #8ce71a;
+}
+.rv4-admin-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+.rv4-admin-alert > span {
+  display: flex;
+}
+.rv4-admin-alert > div {
+  flex: 1;
+}
+.rv4-admin-alert button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+.rv4-admin-alert.is-error {
+  background: rgba(180, 57, 57, 0.13);
+  border: 1px solid rgba(224, 94, 94, 0.32);
+  color: #ffb4b4;
+}
+.rv4-admin-alert.is-success {
+  background: rgba(124, 214, 7, 0.09);
+  border: 1px solid rgba(124, 214, 7, 0.25);
+  color: #c7f68c;
+}
+.rv4-admin-welcome {
+  position: relative;
+  overflow: hidden;
+  min-height: 158px;
+  display: flex;
+  align-items: center;
+  padding: 23px 26px;
+  background: linear-gradient(105deg, #202427 0%, #171a1c 68%, #1d2516 100%);
+  border: 1px solid #343b40;
+  border-radius: 17px;
+  margin-bottom: 17px;
+}
+.rv4-admin-welcome-kicker {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--pistachio);
+  font-weight: 700;
+}
+.rv4-admin-welcome h2 {
+  font-size: 23px;
+  line-height: 1.25;
+  margin: 7px 0 5px;
+  letter-spacing: -0.025em;
+}
+.rv4-admin-welcome p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.rv4-admin-welcome-art {
+  position: absolute;
+  right: 9%;
+  top: 10px;
+  color: rgba(124, 214, 7, 0.17);
+  transform: rotate(-12deg);
+}
+.rv4-admin-welcome-art span {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(124, 214, 7, 0.24);
+  border-radius: 50%;
+  left: -22px;
+  top: -4px;
+}
+.rv4-admin-welcome-chip {
+  position: absolute;
+  right: 20px;
+  bottom: 17px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b9c2cb;
+  font-size: 12px;
+}
+.rv4-admin-welcome-chip span {
+  width: 6px;
+  height: 6px;
+  box-shadow: none;
+}
+.rv4-admin-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 17px;
+}
+.rv4-admin-stat {
+  padding: 16px 17px;
+  background: #141618;
+  border: 1px solid #30363b;
+  border-radius: 14px;
+  min-width: 0;
+}
+.rv4-admin-stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: #aeb4be;
+  font-size: 12px;
+}
+.rv4-admin-stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(124, 214, 7, 0.11);
+  color: var(--pistachio);
+}
+.rv4-admin-stat-icon.blue {
+  color: #8ac9ff;
+  background: rgba(83, 165, 225, 0.12);
+}
+.rv4-admin-stat-icon.violet {
+  color: #c4a6ff;
+  background: rgba(152, 108, 230, 0.13);
+}
+.rv4-admin-stat-icon.amber {
+  color: #ffc978;
+  background: rgba(228, 164, 61, 0.12);
+}
+.rv4-admin-stat > strong {
+  display: block;
+  font-size: clamp(22px, 2.4vw, 30px);
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  margin: 13px 0 7px;
+  overflow-wrap: anywhere;
+}
+.rv4-admin-stat > small {
+  display: block;
+  color: #8c96a0;
+  font-size: 12px;
+}
+.rv4-admin-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+  gap: 15px;
+}
+.rv4-admin-panel {
+  min-width: 0;
+  background: #141618;
+  border: 1px solid #30363b;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.rv4-admin-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px 18px;
+  border-bottom: 1px solid #2b3035;
+}
+.rv4-admin-panel-head h2 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 650;
+}
+.rv4-admin-panel-head p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+.rv4-admin-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+.rv4-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+.rv4-admin-table th {
+  font-size: 12px;
+  font-weight: 600;
+  color: #858e98;
+  letter-spacing: 0.025em;
+  background: #171a1d;
+  padding: 12px 15px;
+  border-bottom: 1px solid #2b3035;
+}
+.rv4-admin-table td {
+  font-size: 12px;
+  color: #d7dbe0;
+  padding: 13px 15px;
+  border-bottom: 1px solid rgba(59, 65, 76, 0.55);
+  vertical-align: middle;
+}
+.rv4-admin-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.rv4-admin-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.018);
+}
+.rv4-admin-table td b,
+.rv4-admin-table td small {
+  display: block;
+}
+.rv4-admin-table td b {
+  font-size: 12px;
+  font-weight: 600;
+  color: #eef0f2;
+}
+.rv4-admin-table td small {
+  font-size: 12px;
+  color: #89929c;
+  margin-top: 3px;
+}
+.rv4-admin-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  background: #252a30;
+  color: #c5ccd3;
+}
+.rv4-admin-status:before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.rv4-admin-status.status-active,
+.rv4-admin-status.status-paid,
+.rv4-admin-status.status-confirmed,
+.rv4-admin-status.status-completed {
+  background: rgba(124, 214, 7, 0.1);
+  color: #a8e96b;
+}
+.rv4-admin-status.status-pending {
+  background: rgba(232, 177, 72, 0.1);
+  color: #f3c878;
+}
+.rv4-admin-status.status-suspended,
+.rv4-admin-status.status-cancelled,
+.rv4-admin-status.status-failed {
+  background: rgba(226, 90, 90, 0.11);
+  color: #ffaaaa;
+}
+.rv4-admin-status.status-refunded {
+  background: rgba(125, 157, 255, 0.12);
+  color: #aebfff;
+}
+.rv4-admin-role-list {
+  padding: 9px 18px 4px;
+}
+.rv4-admin-role-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 0;
+}
+.rv4-admin-role-icon {
+  width: 37px;
+  height: 37px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: rgba(124, 214, 7, 0.11);
+  color: var(--pistachio);
+  flex-shrink: 0;
+}
+.rv4-admin-role-icon.role-1 {
+  background: rgba(83, 165, 225, 0.12);
+  color: #8ac9ff;
+}
+.rv4-admin-role-icon.role-2 {
+  background: rgba(152, 108, 230, 0.13);
+  color: #c4a6ff;
+}
+.rv4-admin-role-info {
+  flex: 1;
+  min-width: 0;
+}
+.rv4-admin-role-info > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+}
+.rv4-admin-role-info > div b {
+  font-weight: 500;
+  color: #d9dde1;
+}
+.rv4-admin-role-info > div strong {
+  color: #fff;
+}
+.rv4-admin-progress {
+  display: block;
+  height: 5px;
+  border-radius: 10px;
+  background: #292e33;
+  overflow: hidden;
+  margin-top: 9px;
+}
+.rv4-admin-progress i {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  background: var(--pistachio);
+}
+.rv4-admin-insight {
+  display: flex;
+  gap: 9px;
+  margin: 8px 16px 16px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #1d2417;
+  color: #c4d6ae;
+  font-size: 12px;
+}
+.rv4-admin-insight svg {
+  flex-shrink: 0;
+  color: var(--pistachio);
+}
+.rv4-admin-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-bottom: 1px solid #2b3035;
+  flex-wrap: wrap;
+}
+.rv4-admin-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 220px;
+  flex: 1;
+  padding: 0 11px;
+  height: 39px;
+  border: 1px solid #3a4148;
+  border-radius: 9px;
+  background: #101214;
+  color: #8d97a1;
+}
+.rv4-admin-search input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ivory);
+  font: inherit;
+  font-size: 12px;
+}
+.rv4-admin-search input::placeholder {
+  color: #79838d;
+}
+.rv4-admin-toolbar select,
+.rv4-admin-billing-form select,
+.rv4-admin-billing-form input,
+.rv4-admin-inline-select {
+  height: 39px;
+  padding: 0 10px;
+  border: 1px solid #3a4148;
+  border-radius: 9px;
+  background: #101214;
+  color: #e8ebee;
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+}
+.rv4-admin-toolbar select:focus,
+.rv4-admin-billing-form select:focus,
+.rv4-admin-billing-form input:focus,
+.rv4-admin-inline-select:focus {
+  border-color: var(--pistachio);
+}
+.rv4-admin-result-count {
+  color: #8c96a0;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 0 5px;
+}
+.rv4-admin-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rv4-admin-person-avatar {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #29331e;
+  color: var(--pistachio);
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.rv4-admin-role-tag {
+  display: inline-flex;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: #252a30;
+  color: #c9d0d7;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+.rv4-admin-role-tag.role-patient {
+  background: rgba(83, 165, 225, 0.1);
+  color: #8ac9ff;
+}
+.rv4-admin-role-tag.role-physiotherapist {
+  background: rgba(124, 214, 7, 0.1);
+  color: #b4ee7c;
+}
+.rv4-admin-role-tag.role-admin {
+  background: rgba(152, 108, 230, 0.13);
+  color: #c4a6ff;
+}
+.rv4-admin-inline-select {
+  height: 32px;
+  max-width: 125px;
+  padding: 0 7px;
+}
+.rv4-admin-inline-select:disabled {
+  opacity: 0.55;
+}
+.rv4-admin-saving {
+  display: block;
+  color: var(--pistachio);
+  margin-top: 4px;
+  font-size: 12px;
+}
+.rv4-admin-footnote {
+  font-size: 12px;
+  color: #8b949e;
+  margin: 12px 2px;
+}
+.rv4-admin-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 16px;
+  color: #929ba5;
+  white-space: normal;
+}
+.rv4-admin-empty > span {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  background: #222820;
+  color: var(--pistachio);
+  margin-bottom: 10px;
+}
+.rv4-admin-empty b {
+  font-size: 13px;
+  color: #e2e5e8;
+}
+.rv4-admin-empty p {
+  font-size: 12px;
+  margin: 5px 0 0;
+  max-width: 340px;
+}
+.rv4-admin-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px;
+  color: #aeb4be;
+  font-size: 13px;
+}
+.rv4-admin-loader {
+  width: 17px;
+  height: 17px;
+  border: 2px solid #3a4148;
+  border-top-color: var(--pistachio);
+  border-radius: 50%;
+  animation: rv4spin 0.8s linear infinite;
+}
+.rv4-spin {
+  animation: rv4spin 0.8s linear infinite;
+}
+@keyframes rv4spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rv4-admin-billing-form-panel {
+  margin-bottom: 16px;
+}
+.rv4-admin-billing-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 13px;
+  padding: 16px 18px 18px;
+}
+.rv4-admin-billing-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+  color: #aeb4be;
+}
+.rv4-admin-billing-form input,
+.rv4-admin-billing-form select {
+  width: 100%;
+  height: 40px;
+}
+.rv4-admin-billing-form .rv4-admin-form-wide {
+  grid-column: span 2;
+}
+.rv4-admin-form-action {
+  display: flex;
+  align-items: flex-end;
+}
+.rv4-admin-form-action button {
+  width: 100%;
+  height: 40px;
+}
+.rv4-admin-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 39;
+  border: 0;
+}
+.rv4-admin-menu-toggle {
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ivory);
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .rv4-admin-content {
+    padding: 23px 22px;
+  }
+  .rv4-admin-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rv4-admin-overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .rv4-admin-billing-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .rv4-admin-sidebar {
+    transform: translateX(-105%);
+    transition: transform 0.22s ease;
+    box-shadow: none;
+  }
+  .rv4-admin-sidebar.is-open {
+    transform: translateX(0);
+    box-shadow: 15px 0 50px rgba(0, 0, 0, 0.35);
+  }
+  .rv4-admin-scrim {
+    display: block;
+  }
+  .rv4-admin-mobile-close {
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+    background: transparent;
+    border: 0;
+    color: #d9dde1;
+    padding: 5px;
+  }
+  .rv4-admin-main-wrap {
+    margin-left: 0;
+  }
+  .rv4-admin-menu-toggle {
+    display: flex;
+  }
+  .rv4-admin-topbar {
+    height: 62px;
+    flex-basis: 62px;
+    padding: 0 15px;
+    gap: 11px;
+  }
+  .rv4-admin-breadcrumb {
+    font-size: 12px;
+  }
+  .rv4-admin-top-user > span:last-child {
+    display: none;
+  }
+  .rv4-admin-content {
+    padding: 21px 14px;
+  }
+  .rv4-admin-page-head {
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .rv4-admin-page-head h1 {
+    font-size: 26px;
+  }
+  .rv4-admin-page-head p {
+    max-width: 450px;
+  }
+  .rv4-admin-page-head .rv4-admin-button {
+    padding: 9px 10px;
+  }
+  .rv4-admin-welcome {
+    padding: 20px;
+    min-height: 150px;
+  }
+  .rv4-admin-welcome h2 {
+    font-size: 20px;
+    max-width: 280px;
+  }
+  .rv4-admin-welcome-art {
+    right: 1%;
+    opacity: 0.7;
+  }
+  .rv4-admin-welcome-chip {
+    left: 20px;
+    right: auto;
+    bottom: 12px;
+    font-size: 12px;
+  }
+  .rv4-admin-stat-grid {
+    gap: 10px;
+  }
+  .rv4-admin-stat {
+    padding: 13px;
+  }
+  .rv4-admin-stat > strong {
+    font-size: 23px;
+  }
+  .rv4-admin-stat-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .rv4-admin-toolbar {
+    padding: 11px;
+  }
+  .rv4-admin-search {
+    flex-basis: 100%;
+  }
+  .rv4-admin-toolbar select {
+    flex: 1;
+    min-width: 0;
+  }
+  .rv4-admin-result-count {
+    width: 100%;
+    padding: 0 2px;
+  }
+  .rv4-admin-billing-form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .rv4-admin-billing-form .rv4-admin-form-wide {
+    grid-column: auto;
+  }
+  .rv4-admin-footer {
+    padding: 14px;
+  }
+  .rv4-admin-panel-head {
+    padding: 14px;
+  }
+  .rv4-admin-table th,
+  .rv4-admin-table td {
+    padding: 12px;
+  }
+  .rv4-admin-page-head {
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 380px) {
+  .rv4-admin-stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .rv4-admin-page-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .rv4-admin-page-head .rv4-admin-button {
+    align-self: flex-start;
+  }
+  .rv4-admin-welcome-art {
+    right: -20px;
+  }
+  .rv4-admin-welcome-chip {
+    font-size: 12px;
+  }
+}

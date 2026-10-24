@@ -1,0 +1,297 @@
+
+.recoveryChartCard {
+  min-width: 0;
+  padding: 20px;
+  margin-top: 16px;
+  overflow: hidden;
+  color: #F9F9F8;
+  background: linear-gradient(145deg, #191B1E, #141617);
+  border: 1px solid #30343A;
+  border-radius: 15px;
+}
+
+.recoveryChartHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.recoveryChartEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #7CD607;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.recoveryChartHeader h2 {
+  margin: 9px 0 7px;
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.recoveryChartHeader p {
+  margin: 0;
+  color: #AEB4BE;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.recoveryRefreshButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 8px 11px;
+  color: #F9F9F8;
+  background: #202327;
+  border: 1px solid #3B414C;
+  border-radius: 9px;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.recoveryRefreshButton:hover:not(:disabled) {
+  color: #7CD607;
+  border-color: #596B49;
+}
+
+.recoveryRefreshButton:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.recoveryRefreshButton .isRefreshing {
+  animation: recoverySpin 1s linear infinite;
+}
+
+.recoveryChartControls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.recoveryLatestScore {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.recoveryLatestScore > span {
+  color: #AEB4BE;
+  font-size: 12px;
+}
+
+.recoveryLatestScore > strong {
+  color: #F9F9F8;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+}
+
+.recoveryLatestScore small {
+  color: #AEB4BE;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.recoveryPeriodSwitch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  background: #101112;
+  border: 1px solid #30343A;
+  border-radius: 9px;
+}
+
+.recoveryPeriodSwitch button {
+  min-height: 32px;
+  padding: 6px 10px;
+  color: #AEB4BE;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.recoveryPeriodSwitch button:hover {
+  color: #F9F9F8;
+}
+
+.recoveryPeriodSwitch button.active {
+  color: #101112;
+  background: #7CD607;
+  border-color: #7CD607;
+  font-weight: 750;
+}
+
+.recoveryChartSummary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 17px;
+  padding: 11px 12px;
+  color: #D9DED6;
+  background: #20251D;
+  border: 1px solid #343D2B;
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.recoverySummaryIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 29px;
+  height: 29px;
+  color: #7CD607;
+  background: #303C25;
+  border-radius: 8px;
+}
+
+.recoveryChartPlot {
+  width: 100%;
+  height: 270px;
+  margin-top: 17px;
+}
+
+.recoveryChartPlot .recharts-wrapper {
+  outline: none;
+}
+
+.recoveryChartPlot .recharts-cartesian-axis-tick-value {
+  font-family: inherit;
+}
+
+.recoveryChartPlot .recharts-tooltip-cursor {
+  stroke: #7CD607;
+  stroke-opacity: 0.25;
+}
+
+.recoveryChartPlot .recharts-active-dot {
+  filter: drop-shadow(0 0 6px #7CD60765);
+}
+
+.recoveryChartState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+  border: 1px dashed #3B414C;
+  border-radius: 11px;
+  background: #121415;
+}
+
+.recoveryChartStateIcon {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  color: #7CD607;
+  background: #293322;
+  border: 1px solid #465339;
+  border-radius: 14px;
+}
+
+.recoveryChartState > strong {
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.recoveryChartState > p {
+  max-width: 430px;
+  margin: 0;
+  color: #AEB4BE;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.recoveryChartLoader {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #3B414C;
+  border-top-color: #7CD607;
+  border-radius: 50%;
+  animation: recoverySpin 800ms linear infinite;
+}
+
+.recoveryChartFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 13px;
+  margin-top: 7px;
+  border-top: 1px solid #30343A;
+  color: #AEB4BE;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@keyframes recoverySpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .recoveryChartCard {
+    padding: 15px;
+  }
+
+  .recoveryChartHeader h2 {
+    font-size: 19px;
+  }
+
+  .recoveryChartHeader p {
+    max-width: 300px;
+    font-size: 12px;
+  }
+
+  .recoveryChartControls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .recoveryPeriodSwitch {
+    width: 100%;
+  }
+
+  .recoveryPeriodSwitch button {
+    flex: 1;
+  }
+
+  .recoveryChartPlot {
+    height: 245px;
+  }
+
+  .recoveryChartFooter {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recoveryChartCard *,
+  .recoveryChartCard *::before,
+  .recoveryChartCard *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

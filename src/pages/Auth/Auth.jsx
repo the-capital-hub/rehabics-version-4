@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Activity,
@@ -15,16 +15,27 @@ import {
   LockKeyhole,
   Phone,
   CheckCircle2,
+  AlertCircle,
+  LoaderCircle,
 } from "lucide-react";
 import "./Auth.css";
 
+// Backend API URL
+const API_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api"
+).replace(/\/+$/, "");
+
 const Auth = () => {
+  const navigate = useNavigate();
+
   const [mode, setMode] = useState("login");
   const [role, setRole] = useState("patient");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("success");
+  const [loading, setLoading] = useState(false);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -51,22 +62,34 @@ const Auth = () => {
   const switchMode = (nextMode) => {
     setMode(nextMode);
     setMessage("");
+    setShowPassword(false);
+    setShowConfirmPassword(false);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setMessage("");
 
+    const email = form.email.trim().toLowerCase();
+
+    // Email validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setMessageType("error");
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    if (!form.password) {
+      setMessageType("error");
+      setMessage("Please enter your password.");
+      return;
+    }
+
+    // Registration validation
     if (isRegister) {
       if (form.name.trim().length < 2) {
         setMessageType("error");
         setMessage("Please enter your full name.");
-        return;
-      }
-
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-        setMessageType("error");
-        setMessage("Please enter a valid email address.");
         return;
       }
 
@@ -93,20 +116,110 @@ const Auth = () => {
         setMessage("Please accept the terms to continue.");
         return;
       }
-    } else {
-      if (!form.email.trim() || !form.password) {
-        setMessageType("error");
-        setMessage("Please enter your email and password.");
-        return;
-      }
     }
 
-    setMessageType("success");
-    setMessage(
-      isRegister
-        ? `Your ${role === "patient" ? "patient" : "physiotherapist"} registration form is valid. Connect the backend to create your account.`
-        : "Your form is valid. Connect the backend to sign in securely."
-    );
+    setLoading(true);
+
+    try {
+      const endpoint = isRegister ? "register" : "login";
+
+      const payload = isRegister
+        ? {
+            name: form.name.trim(),
+            email,
+            phone: form.phone.trim(),
+            password: form.password,
+            role,
+          }
+        : {
+            email,
+            password: form.password,
+          };
+
+      // Call the custom backend API
+      const response = await fetch(`${API_URL}/auth/${endpoint}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || !data.success) {
+        throw new Error(
+          data.message || "Authentication failed. Please try again."
+        );
+      }
+
+      if (!data.token || !data.user) {
+        throw new Error(
+          "The server response is incomplete. Please check your backend."
+        );
+      }
+
+      // Store the token according to the Remember me setting.
+      
+      // Save token according to Remember me
+      if (!isRegister && !form.remember) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("rehabics_token");
+
+        sessionStorage.setItem("token", data.token);
+        sessionStorage.setItem("rehabics_token", data.token);
+
+        sessionStorage.setItem("user", JSON.stringify(data.user));
+        sessionStorage.setItem("rehabics_user", JSON.stringify(data.user));
+      } else {
+        sessionStorage.removeItem("token");
+        sessionStorage.removeItem("rehabics_token");
+        sessionStorage.removeItem("user");
+        sessionStorage.removeItem("rehabics_user");
+
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("rehabics_token", data.token);
+
+        localStorage.setItem("user", JSON.stringify(data.user));
+        localStorage.setItem("rehabics_user", JSON.stringify(data.user));
+      }
+
+      setMessageType("success");
+      setMessage(
+        data.message ||
+          (isRegister
+            ? "Your account has been created successfully."
+            : "Signed in successfully.")
+      );
+
+      // Redirect according to the authenticated role
+      if (data.user.role === "patient") {
+        navigate("/patient/dashboard", { replace: true });
+      } else if (data.user.role === "physiotherapist") {
+        navigate("/physiotherapist/dashboard", { replace: true });
+      } else if (data.user.role === "admin") {
+        navigate("/admin/dashboard", { replace: true });
+      } else {
+        setMessageType("error");
+        setMessage("Your account role is not supported.");
+      }
+
+    } catch (error) {
+      setMessageType("error");
+
+      if (
+        error instanceof TypeError ||
+        error.message === "Failed to fetch"
+      ) {
+        setMessage(
+          "Cannot connect to the backend. Check your API URL, server status, and CORS settings."
+        );
+      } else {
+        setMessage(error.message || "Something went wrong. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -211,13 +324,18 @@ const Auth = () => {
             </p>
           </div>
 
-          <div className="authModeSwitch" role="tablist" aria-label="Account access">
+          <div
+            className="authModeSwitch"
+            role="tablist"
+            aria-label="Account access"
+          >
             <button
               type="button"
               role="tab"
               aria-selected={!isRegister}
               className={!isRegister ? "active" : ""}
               onClick={() => switchMode("login")}
+              disabled={loading}
             >
               Sign In
             </button>
@@ -228,6 +346,7 @@ const Auth = () => {
               aria-selected={isRegister}
               className={isRegister ? "active" : ""}
               onClick={() => switchMode("register")}
+              disabled={loading}
             >
               Create Account
             </button>
@@ -256,6 +375,7 @@ const Auth = () => {
                       }`}
                       onClick={() => setRole("patient")}
                       aria-pressed={role === "patient"}
+                      disabled={loading}
                     >
                       <span className="authRoleIcon">
                         <HeartPulse size={20} />
@@ -274,6 +394,7 @@ const Auth = () => {
                       }`}
                       onClick={() => setRole("physiotherapist")}
                       aria-pressed={role === "physiotherapist"}
+                      disabled={loading}
                     >
                       <span className="authRoleIcon">
                         <Stethoscope size={20} />
@@ -300,6 +421,7 @@ const Auth = () => {
                         onChange={updateField}
                         required
                         minLength={2}
+                        disabled={loading}
                       />
                     </div>
                   </div>
@@ -319,6 +441,7 @@ const Auth = () => {
                     value={form.email}
                     onChange={updateField}
                     required
+                    disabled={loading}
                   />
                 </div>
               </div>
@@ -337,6 +460,7 @@ const Auth = () => {
                       value={form.phone}
                       onChange={updateField}
                       required
+                      disabled={loading}
                     />
                   </div>
                 </div>
@@ -345,6 +469,7 @@ const Auth = () => {
               <div className="authField">
                 <div className="authLabelRow">
                   <label htmlFor="authPassword">Password</label>
+
                   {!isRegister && (
                     <button
                       type="button"
@@ -355,6 +480,7 @@ const Auth = () => {
                           "Password recovery will be available after backend integration."
                         );
                       }}
+                      disabled={loading}
                     >
                       Forgot password?
                     </button>
@@ -368,7 +494,9 @@ const Auth = () => {
                     name="password"
                     type={showPassword ? "text" : "password"}
                     placeholder={
-                      isRegister ? "At least 8 characters" : "Enter your password"
+                      isRegister
+                        ? "At least 8 characters"
+                        : "Enter your password"
                     }
                     autoComplete={
                       isRegister ? "new-password" : "current-password"
@@ -377,12 +505,15 @@ const Auth = () => {
                     onChange={updateField}
                     minLength={isRegister ? 8 : undefined}
                     required
+                    disabled={loading}
                   />
+
                   <button
                     type="button"
                     className="authEyeButton"
                     aria-label={showPassword ? "Hide password" : "Show password"}
                     onClick={() => setShowPassword((value) => !value)}
+                    disabled={loading}
                   >
                     {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                   </button>
@@ -391,7 +522,10 @@ const Auth = () => {
 
               {isRegister && (
                 <div className="authField">
-                  <label htmlFor="authConfirmPassword">Confirm password</label>
+                  <label htmlFor="authConfirmPassword">
+                    Confirm password
+                  </label>
+
                   <div className="authInputWrap">
                     <LockKeyhole size={18} />
                     <input
@@ -403,7 +537,9 @@ const Auth = () => {
                       value={form.confirmPassword}
                       onChange={updateField}
                       required
+                      disabled={loading}
                     />
+
                     <button
                       type="button"
                       className="authEyeButton"
@@ -415,6 +551,7 @@ const Auth = () => {
                       onClick={() =>
                         setShowConfirmPassword((value) => !value)
                       }
+                      disabled={loading}
                     >
                       {showConfirmPassword ? (
                         <EyeOff size={18} />
@@ -433,6 +570,7 @@ const Auth = () => {
                     name="remember"
                     checked={form.remember}
                     onChange={updateField}
+                    disabled={loading}
                   />
                   <span>Remember me on this device</span>
                 </label>
@@ -445,10 +583,13 @@ const Auth = () => {
                     name="agree"
                     checked={form.agree}
                     onChange={updateField}
+                    required
+                    disabled={loading}
                   />
                   <span>
-                    I agree to the <a href="/terms">Terms of Service</a> and{" "}
-                    <a href="/privacy">Privacy Policy</a>.
+                    I agree to the{" "}
+                    <Link to="/terms">Terms of Service</Link> and{" "}
+                    <Link to="/privacy">Privacy Policy</Link>.
                   </span>
                 </label>
               )}
@@ -458,18 +599,37 @@ const Auth = () => {
                   className={`authMessage ${
                     messageType === "error" ? "error" : "success"
                   }`}
-                  role="status"
+                  role="alert"
                 >
-                  {messageType === "success" && <CheckCircle2 size={17} />}
+                  {messageType === "error" ? (
+                    <AlertCircle size={17} />
+                  ) : (
+                    <CheckCircle2 size={17} />
+                  )}
                   <span>{message}</span>
                 </div>
               )}
 
-              <button type="submit" className="authSubmit">
-                <span>
-                  {isRegister ? "Create my account" : "Sign in to your account"}
-                </span>
-                <ArrowRight size={19} />
+              <button
+                type="submit"
+                className="authSubmit"
+                disabled={loading}
+              >
+                {loading ? (
+                  <>
+                    <LoaderCircle size={19} className="authSpinner" />
+                    <span>Please wait...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>
+                      {isRegister
+                        ? "Create my account"
+                        : "Sign in to your account"}
+                    </span>
+                    <ArrowRight size={19} />
+                  </>
+                )}
               </button>
 
               <div className="authSecureNote">
@@ -483,7 +643,10 @@ const Auth = () => {
             {isRegister ? "Already have an account?" : "New to Rehabics?"}{" "}
             <button
               type="button"
-              onClick={() => switchMode(isRegister ? "login" : "register")}
+              onClick={() =>
+                switchMode(isRegister ? "login" : "register")
+              }
+              disabled={loading}
             >
               {isRegister ? "Sign in" : "Create an account"}
             </button>
