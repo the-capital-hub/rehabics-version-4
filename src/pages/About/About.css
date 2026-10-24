@@ -1772,3 +1772,385 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Responsive refinement overrides for Rehabics V4 */
+.rehab-about {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.rehab-about .about-container,
+.rehab-about .about-hero-layout,
+.rehab-about .about-story-grid,
+.rehab-about .about-difference-grid,
+.rehab-about .about-commitment-grid,
+.rehab-about .about-purpose-grid,
+.rehab-about .about-principles-grid,
+.rehab-about .about-values-grid,
+.rehab-about .about-support-grid,
+.rehab-about .about-journey-grid {
+  min-width: 0;
+}
+
+.rehab-about img {
+  max-width: 100%;
+}
+
+/* Keep section spacing compact and consistent */
+.rehab-about .about-section {
+  padding-block: 20px;
+}
+
+.rehab-about .about-hero {
+  min-height: 0;
+  padding-block: 20px;
+}
+
+.rehab-about .about-cta {
+  padding-block: 20px;
+}
+
+/* Prevent long headings and content from causing overflow */
+.rehab-about h1,
+.rehab-about h2,
+.rehab-about h3,
+.rehab-about p,
+.rehab-about a,
+.rehab-about strong,
+.rehab-about small,
+.rehab-about span {
+  overflow-wrap: anywhere;
+}
+
+.rehab-about .about-hero-layout,
+.rehab-about .about-story-grid,
+.rehab-about .about-difference-grid,
+.rehab-about .about-commitment-grid {
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.rehab-about .about-hero-floating-card {
+  max-width: calc(100% - 12px);
+}
+
+.rehab-about .about-story-card {
+  max-width: calc(100% - 8px);
+}
+
+.rehab-about .about-purpose-card,
+.rehab-about .about-principle-card,
+.rehab-about .about-value-card,
+.rehab-about .about-journey-card,
+.rehab-about .about-support-card {
+  min-width: 0;
+}
+
+.rehab-about .about-card-label,
+.rehab-about .about-purpose-bottom span,
+.rehab-about .about-commitment-image-caption span {
+  font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  .rehab-about .about-container {
+    width: calc(100% - 40px);
+  }
+
+  .rehab-about .about-hero-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 24px;
+  }
+
+  .rehab-about .about-hero-copy h1 {
+    font-size: clamp(34px, 4.8vw, 48px);
+    letter-spacing: -1.4px;
+  }
+
+  .rehab-about .about-story-grid,
+  .rehab-about .about-difference-grid,
+  .rehab-about .about-commitment-grid {
+    gap: 24px;
+  }
+
+  .rehab-about .about-principles-grid,
+  .rehab-about .about-values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .rehab-about .about-container {
+    width: calc(100% - 32px);
+  }
+
+  .rehab-about .about-section,
+  .rehab-about .about-hero,
+  .rehab-about .about-cta {
+    padding-block: 20px;
+  }
+
+  .rehab-about .about-hero-layout,
+  .rehab-about .about-story-grid,
+  .rehab-about .about-difference-grid,
+  .rehab-about .about-commitment-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .rehab-about .about-hero-copy h1 {
+    font-size: clamp(32px, 8.5vw, 44px);
+    line-height: 1.14;
+    letter-spacing: -1.1px;
+  }
+
+  .rehab-about .about-hero-copy > p,
+  .rehab-about .about-story-copy > p,
+  .rehab-about .about-difference-copy > p,
+  .rehab-about .about-section-heading > p,
+  .rehab-about .about-philosophy-heading > p,
+  .rehab-about .about-values-heading > p,
+  .rehab-about .about-support-heading > p,
+  .rehab-about .about-journey-heading > p,
+  .rehab-about .about-commitment-copy > p,
+  .rehab-about .about-purpose-card > p,
+  .rehab-about .about-principle-card > p,
+  .rehab-about .about-value-card > p,
+  .rehab-about .about-support-content > p,
+  .rehab-about .about-journey-card > p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .rehab-about .about-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .rehab-about .about-button-primary,
+  .rehab-about .about-button-secondary {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding-inline: 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .rehab-about .about-hero-visual {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+    margin: 0;
+    padding: 0 8px 16px 0;
+  }
+
+  .rehab-about .about-hero-photo {
+    height: clamp(240px, 68vw, 340px);
+  }
+
+  .rehab-about .about-hero-floating-card {
+    right: 0;
+    max-width: calc(100% - 8px);
+    padding: 10px;
+  }
+
+  .rehab-about .about-hero-floating-card strong,
+  .rehab-about .about-hero-floating-card small {
+    font-size: 12px;
+  }
+
+  .rehab-about .about-story-visual {
+    margin-inline: 4px;
+    padding: 0 10px 20px 0;
+  }
+
+  .rehab-about .about-story-image {
+    height: clamp(230px, 65vw, 320px);
+  }
+
+  .rehab-about .about-story-card {
+    right: 0;
+    width: min(300px, calc(100% - 4px));
+    padding: 10px;
+  }
+
+  .rehab-about .about-vertical-label {
+    right: -3px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .rehab-about .about-story-copy h2,
+  .rehab-about .about-difference-copy h2,
+  .rehab-about .about-section-heading h2,
+  .rehab-about .about-philosophy-heading h2,
+  .rehab-about .about-values-heading h2,
+  .rehab-about .about-support-heading h2,
+  .rehab-about .about-journey-heading h2,
+  .rehab-about .about-commitment-copy h2,
+  .rehab-about .about-cta-copy h2 {
+    font-size: clamp(27px, 7vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+  }
+
+  .rehab-about .about-purpose-grid,
+  .rehab-about .about-principles-grid,
+  .rehab-about .about-values-grid,
+  .rehab-about .about-support-grid,
+  .rehab-about .about-journey-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .rehab-about .about-purpose-card {
+    min-height: 0;
+    padding: 15px;
+  }
+
+  .rehab-about .about-purpose-card h3 {
+    font-size: 18px;
+  }
+
+  .rehab-about .about-card-top {
+    margin-bottom: 15px;
+  }
+
+  .rehab-about .about-card-label,
+  .rehab-about .about-purpose-bottom span {
+    font-size: 12px;
+    letter-spacing: 0.4px;
+  }
+
+  .rehab-about .about-principle-card,
+  .rehab-about .about-value-card,
+  .rehab-about .about-journey-card {
+    min-height: 0;
+    padding: 13px;
+  }
+
+  .rehab-about .about-principle-card h3,
+  .rehab-about .about-value-card h3,
+  .rehab-about .about-journey-card h3 {
+    font-size: 13px;
+  }
+
+  .rehab-about .about-principle-top,
+  .rehab-about .about-value-top {
+    margin-bottom: 14px;
+  }
+
+  .rehab-about .about-principle-card > p,
+  .rehab-about .about-value-card > p,
+  .rehab-about .about-journey-card > p {
+    font-size: 12px;
+  }
+
+  .rehab-about .about-support-image {
+    height: clamp(150px, 42vw, 220px);
+  }
+
+  .rehab-about .about-support-content {
+    padding: 13px;
+  }
+
+  .rehab-about .about-support-content h3 {
+    font-size: 15px;
+  }
+
+  .rehab-about .about-support-content > p {
+    min-height: 0;
+  }
+
+  .rehab-about .about-difference-visual,
+  .rehab-about .about-commitment-visual {
+    height: clamp(240px, 65vw, 320px);
+  }
+
+  .rehab-about .about-commitment-points > div {
+    padding-block: 10px;
+  }
+
+  .rehab-about .about-cta-panel {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .rehab-about .about-cta-actions {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .rehab-about .about-cta-actions .about-button-primary {
+    width: 100%;
+  }
+
+  .rehab-about .about-cta-watermark {
+    right: 4px;
+    bottom: 0;
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+}
+
+@media (max-width: 390px) {
+  .rehab-about .about-container {
+    width: calc(100% - 24px);
+  }
+
+  .rehab-about .about-actions,
+  .rehab-about .about-purpose-grid,
+  .rehab-about .about-principles-grid,
+  .rehab-about .about-values-grid,
+  .rehab-about .about-support-grid,
+  .rehab-about .about-journey-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-about .about-actions {
+    display: grid;
+  }
+
+  .rehab-about .about-button-primary,
+  .rehab-about .about-button-secondary {
+    width: 100%;
+  }
+
+  .rehab-about .about-purpose-card,
+  .rehab-about .about-principle-card,
+  .rehab-about .about-value-card,
+  .rehab-about .about-journey-card {
+    padding: 14px;
+  }
+
+  .rehab-about .about-support-image {
+    height: 200px;
+  }
+
+  .rehab-about .about-photo-caption {
+    right: 10px;
+    bottom: 12px;
+    left: 10px;
+    gap: 8px;
+  }
+
+  .rehab-about .about-photo-caption strong,
+  .rehab-about .about-story-card strong {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rehab-about *,
+  .rehab-about *::before,
+  .rehab-about *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

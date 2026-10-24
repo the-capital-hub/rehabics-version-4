@@ -1316,69 +1316,20 @@
 
 /* APPROACH SECTION */
 
-.home-approach {
+ .home-approach {
   --approach-green: #7cd607;
   --approach-bg: #101112;
   --approach-muted: #aeb4be;
-
   position: relative;
   isolation: isolate;
   overflow: hidden;
   padding: 76px 0;
   color: #f9f9f8;
   background:
-    linear-gradient(
-      90deg,
-      rgba(16, 17, 18, 0.95),
-      rgba(16, 17, 18, 0.82)
-    ),
-    radial-gradient(
-      ellipse at 85% 10%,
-      rgba(124, 214, 7, 0.09),
-      transparent 38%
-    ),
+    linear-gradient(90deg, rgba(16, 17, 18, 0.95), rgba(16, 17, 18, 0.82)),
+    radial-gradient(ellipse at 85% 10%, rgba(124, 214, 7, 0.09), transparent 38%),
     url("/src/assets/approch.png") center / cover no-repeat,
     #101112;
-
-  color: #f9f9f8;
-  
-.home-process {
-  
-  --process-green: #7cd607;
-  --process-bg: #101112;
-  --process-muted: #aeb4be;
-
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: 70px 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(16, 17, 18, 0.95),
-      rgba(16, 17, 18, 0.82)
-    ),
-    radial-gradient(
-      ellipse at 85% 10%,
-      rgba(124, 214, 7, 0.09),
-      transparent 38%
-    ),
-    url("/src/assets/approch.png") center / cover no-repeat,
-    #101112;
-
-  color: #f9f9f8;
-}
-
-  
-  
-  /* background:
-    radial-gradient(
-      ellipse at 90% 45%,
-      rgba(124, 214, 7, 0.055),
-      transparent 36%
-    ),
-    #101112; */
 }
 
 .home-approach .home-container {
@@ -3338,4 +3289,201 @@
   border-radius: 50%;
   background: var(--approach-green, #7cd607);
   transform: translateY(-50%);
+}
+
+
+/* FINAL HOMEPAGE RESPONSIVE SAFETY OVERRIDES */
+.rehab-home {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.rehab-home img,
+.rehab-home svg {
+  max-width: 100%;
+}
+
+.rehab-home .home-container,
+.rehab-home .home-intro .home-container,
+.rehab-home .home-services .home-container,
+.rehab-home .home-approach .home-container,
+.rehab-home .home-process .home-container,
+.rehab-home .home-trust .home-container,
+.rehab-home .home-faq .home-container {
+  min-width: 0;
+}
+
+.rehab-home h1,
+.rehab-home h2,
+.rehab-home h3,
+.rehab-home p,
+.rehab-home a,
+.rehab-home button,
+.rehab-home span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .rehab-home .home-approach-grid,
+  .rehab-home .home-trust-inner,
+  .rehab-home .home-faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-home .home-approach-grid {
+    gap: 30px;
+  }
+
+  .rehab-home .home-trust-inner {
+    gap: 28px;
+  }
+
+  .rehab-home .home-trust-cards {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .rehab-home .home-container,
+  .rehab-home .home-intro .home-container,
+  .rehab-home .home-services .home-container,
+  .rehab-home .home-approach .home-container,
+  .rehab-home .home-process .home-container,
+  .rehab-home .home-trust .home-container,
+  .rehab-home .home-faq .home-container {
+    width: calc(100% - 32px);
+    max-width: 100%;
+  }
+
+  .rehab-home .home-section,
+  .rehab-home .home-intro,
+  .rehab-home .home-services,
+  .rehab-home .home-approach,
+  .rehab-home .home-process,
+  .rehab-home .home-trust,
+  .rehab-home .home-faq {
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+
+  .rehab-home .home-intro-grid,
+  .rehab-home .home-approach-grid,
+  .rehab-home .home-trust-inner,
+  .rehab-home .home-faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  .rehab-home .home-services-heading,
+  .rehab-home .home-process-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .rehab-home .home-service-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-home .home-service-card {
+    min-width: 0;
+  }
+
+  .rehab-home .home-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-home .home-trust-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-home .home-trust-card-wide {
+    grid-column: auto;
+  }
+
+  .rehab-home .home-services-footer {
+    flex-wrap: wrap;
+  }
+
+  .rehab-home .home-services-footer-line {
+    min-width: 24px;
+  }
+
+  .rehab-home .home-process-footer,
+  .rehab-home .home-cta-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rehab-home .home-cta-actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .rehab-home .home-cta-actions a,
+  .rehab-home .home-primary-link,
+  .rehab-home .home-process-cta,
+  .rehab-home .home-services-view-all {
+    max-width: 100%;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 420px) {
+  .rehab-home .home-container,
+  .rehab-home .home-intro .home-container,
+  .rehab-home .home-services .home-container,
+  .rehab-home .home-approach .home-container,
+  .rehab-home .home-process .home-container,
+  .rehab-home .home-trust .home-container,
+  .rehab-home .home-faq .home-container {
+    width: calc(100% - 28px);
+  }
+
+  .rehab-home .home-intro-highlights {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-home .home-intro-highlight {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .rehab-home .home-service-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-home .home-service-card-image {
+    height: 205px;
+    min-height: 205px;
+  }
+
+  .rehab-home .home-service-card-content {
+    min-height: 0;
+  }
+
+  .rehab-home .home-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-home .home-trust-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-home .home-faq-question {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rehab-home *,
+  .rehab-home *::before,
+  .rehab-home *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

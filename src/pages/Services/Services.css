@@ -1374,3 +1374,541 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Responsive refinements for Rehabics V4 Services page */
+.rehab-services {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.rehab-services .services-container,
+.rehab-services .services-hero-layout,
+.rehab-services .services-intro-layout,
+.rehab-services .services-approach-layout,
+.rehab-services .services-why-layout,
+.rehab-services .services-faq-layout,
+.rehab-services .services-card-grid,
+.rehab-services .services-process-grid,
+.rehab-services .services-why-grid {
+  min-width: 0;
+}
+
+.rehab-services .services-container {
+  width: min(1240px, calc(100% - 40px));
+}
+
+.rehab-services .services-section,
+.rehab-services .services-hero,
+.rehab-services .services-cta {
+  padding-block: 20px;
+}
+
+.rehab-services .services-hero {
+  min-height: 0;
+}
+
+.rehab-services .services-hero-layout {
+  gap: clamp(20px, 3vw, 44px);
+}
+
+.rehab-services .services-hero-copy,
+.rehab-services .services-hero-visual,
+.rehab-services .services-intro-heading,
+.rehab-services .services-intro-copy,
+.rehab-services .services-approach-copy,
+.rehab-services .services-why-copy,
+.rehab-services .services-faq-intro,
+.rehab-services .services-faq-list {
+  min-width: 0;
+}
+
+.rehab-services .services-hero-copy h1 {
+  overflow-wrap: anywhere;
+  font-size: clamp(34px, 4.5vw, 62px);
+  letter-spacing: -1.5px;
+}
+
+.rehab-services .services-hero-copy > p,
+.rehab-services .services-intro-copy > p,
+.rehab-services .services-section-heading > p,
+.rehab-services .services-approach-copy > p,
+.rehab-services .services-why-copy > p,
+.rehab-services .services-faq-intro > p,
+.rehab-services .services-cta-copy > p {
+  overflow-wrap: anywhere;
+}
+
+.rehab-services .services-hero-actions {
+  gap: 10px;
+}
+
+.rehab-services .services-hero-actions > a {
+  max-width: 100%;
+}
+
+.rehab-services .services-hero-visual {
+  max-width: 460px;
+  padding: 0 10px 18px 0;
+}
+
+.rehab-services .services-hero-image {
+  height: clamp(280px, 34vw, 415px);
+}
+
+.rehab-services .services-hero-floating {
+  right: 0;
+  max-width: calc(100% - 14px);
+}
+
+.rehab-services .services-hero-floating span,
+.rehab-services .services-hero-image-caption > span:last-child {
+  min-width: 0;
+}
+
+.rehab-services .services-hero-floating strong,
+.rehab-services .services-hero-floating small,
+.rehab-services .services-hero-image-caption strong,
+.rehab-services .services-hero-image-caption small {
+  overflow-wrap: anywhere;
+}
+
+.rehab-services .services-section-heading {
+  align-items: flex-start;
+}
+
+.rehab-services .services-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.rehab-services .services-card {
+  min-width: 0;
+}
+
+.rehab-services .services-card-image {
+  height: clamp(170px, 18vw, 220px);
+}
+
+.rehab-services .services-card-content {
+  min-height: 0;
+  padding: 18px;
+}
+
+.rehab-services .services-card-content h3,
+.rehab-services .services-card-content > p,
+.rehab-services .services-feature-list li,
+.rehab-services .services-card-link {
+  overflow-wrap: anywhere;
+}
+
+.rehab-services .services-card-content > p {
+  min-height: 0;
+}
+
+.rehab-services .services-feature-list {
+  gap: 8px;
+}
+
+.rehab-services .services-feature-list li {
+  min-width: 0;
+}
+
+.rehab-services .services-feature-list li span {
+  min-width: 0;
+}
+
+.rehab-services .services-approach-visual {
+  height: clamp(280px, 36vw, 440px);
+  min-width: 0;
+}
+
+.rehab-services .services-process-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rehab-services .services-process-card,
+.rehab-services .services-why-item {
+  min-width: 0;
+  min-height: 0;
+  padding: 18px;
+}
+
+.rehab-services .services-process-card h3,
+.rehab-services .services-process-card > p,
+.rehab-services .services-why-item h3,
+.rehab-services .services-why-item > p {
+  overflow-wrap: anywhere;
+}
+
+.rehab-services .services-why-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rehab-services .services-faq-question {
+  min-width: 0;
+  gap: 12px;
+}
+
+.rehab-services .services-faq-question > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.rehab-services .services-faq-toggle {
+  flex-shrink: 0;
+}
+
+.rehab-services .services-faq-answer {
+  overflow-wrap: anywhere;
+}
+
+.rehab-services .services-cta-panel {
+  min-width: 0;
+  padding: 20px;
+}
+
+.rehab-services .services-cta-copy,
+.rehab-services .services-cta-actions {
+  min-width: 0;
+}
+
+.rehab-services .services-cta-watermark {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .rehab-services .services-container {
+    width: calc(100% - 36px);
+  }
+
+  .rehab-services .services-hero-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 24px;
+  }
+
+  .rehab-services .services-hero-copy h1 {
+    font-size: clamp(32px, 4.4vw, 48px);
+    letter-spacing: -1.2px;
+  }
+
+  .rehab-services .services-hero-image {
+    height: clamp(260px, 33vw, 350px);
+  }
+
+  .rehab-services .services-intro-layout,
+  .rehab-services .services-approach-layout {
+    gap: 24px;
+  }
+
+  .rehab-services .services-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rehab-services .services-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rehab-services .services-why-layout {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 24px;
+  }
+
+  .rehab-services .services-faq-layout {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 24px;
+  }
+
+  .rehab-services .services-section-heading {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .rehab-services .services-container {
+    width: calc(100% - 32px);
+  }
+
+  .rehab-services .services-section,
+  .rehab-services .services-hero,
+  .rehab-services .services-cta {
+    padding-block: 20px;
+  }
+
+  .rehab-services .services-hero-layout,
+  .rehab-services .services-intro-layout,
+  .rehab-services .services-approach-layout,
+  .rehab-services .services-why-layout,
+  .rehab-services .services-faq-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .rehab-services .services-hero-copy h1 {
+    margin-block: 14px;
+    font-size: clamp(32px, 8.5vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -1px;
+  }
+
+  .rehab-services .services-hero-copy > p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .rehab-services .services-hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .rehab-services .services-button-primary,
+  .rehab-services .services-button-secondary {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 12px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .rehab-services .services-hero-note {
+    margin-top: 16px;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+
+  .rehab-services .services-hero-visual {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 8px 16px 0;
+  }
+
+  .rehab-services .services-hero-image {
+    height: clamp(250px, 76vw, 340px);
+  }
+
+  .rehab-services .services-hero-image-caption {
+    right: 10px;
+    bottom: 12px;
+    left: 10px;
+    gap: 9px;
+  }
+
+  .rehab-services .services-hero-image-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .rehab-services .services-hero-floating {
+    right: 0;
+    bottom: 0;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .rehab-services .services-hero-floating strong,
+  .rehab-services .services-hero-floating small {
+    font-size: 12px;
+  }
+
+  .rehab-services .services-hero-footer {
+    display: none;
+  }
+
+  .rehab-services .services-intro-heading h2,
+  .rehab-services .services-section-heading h2,
+  .rehab-services .services-approach-copy h2,
+  .rehab-services .services-why-copy h2,
+  .rehab-services .services-faq-intro h2,
+  .rehab-services .services-cta-copy h2 {
+    margin-block: 12px;
+    font-size: clamp(27px, 7vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+    overflow-wrap: anywhere;
+  }
+
+  .rehab-services .services-intro-copy {
+    padding-left: 14px;
+  }
+
+  .rehab-services .services-intro-copy > p,
+  .rehab-services .services-section-heading > p,
+  .rehab-services .services-approach-copy > p,
+  .rehab-services .services-why-copy > p,
+  .rehab-services .services-faq-intro > p,
+  .rehab-services .services-cta-copy > p {
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .rehab-services .services-section-heading {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .rehab-services .services-card-grid,
+  .rehab-services .services-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .rehab-services .services-card-image {
+    height: clamp(190px, 58vw, 250px);
+  }
+
+  .rehab-services .services-card-content {
+    padding: 16px;
+  }
+
+  .rehab-services .services-card-content h3 {
+    font-size: 19px;
+  }
+
+  .rehab-services .services-card-content > p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .rehab-services .services-approach-visual {
+    height: clamp(250px, 72vw, 330px);
+  }
+
+  .rehab-services .services-approach-stamp {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .rehab-services .services-approach-stamp span {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .rehab-services .services-approach-points {
+    margin-bottom: 16px;
+  }
+
+  .rehab-services .services-approach-points > div {
+    gap: 10px;
+    padding-block: 12px;
+  }
+
+  .rehab-services .services-process-card {
+    padding: 16px;
+  }
+
+  .rehab-services .services-process-top {
+    margin-bottom: 12px;
+  }
+
+  .rehab-services .services-process-card h3 {
+    font-size: 16px;
+  }
+
+  .rehab-services .services-process-card > p {
+    font-size: 13px;
+  }
+
+  .rehab-services .services-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .rehab-services .services-why-item {
+    padding: 14px;
+  }
+
+  .rehab-services .services-why-icon {
+    margin-bottom: 12px;
+  }
+
+  .rehab-services .services-why-item h3 {
+    font-size: 14px;
+  }
+
+  .rehab-services .services-why-item > p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .rehab-services .services-faq-question {
+    padding-block: 12px;
+    font-size: 13px;
+  }
+
+  .rehab-services .services-faq-answer {
+    padding: 0 0 14px;
+  }
+
+  .rehab-services .services-faq-answer > p {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .rehab-services .services-cta-panel {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .rehab-services .services-cta-actions {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .rehab-services .services-cta-watermark {
+    right: 4px;
+    bottom: -5px;
+    font-size: clamp(48px, 13vw, 66px);
+    letter-spacing: -2px;
+  }
+}
+
+@media (max-width: 390px) {
+  .rehab-services .services-container {
+    width: calc(100% - 24px);
+  }
+
+  .rehab-services .services-why-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-services .services-why-item {
+    padding: 15px;
+  }
+
+  .rehab-services .services-image-index {
+    top: 9px;
+    right: 9px;
+    padding: 7px;
+    font-size: 10px;
+  }
+
+  .rehab-services .services-hero-floating {
+    max-width: calc(100% - 8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rehab-services *,
+  .rehab-services *::before,
+  .rehab-services *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

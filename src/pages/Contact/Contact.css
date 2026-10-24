@@ -1256,3 +1256,426 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+/* RESPONSIVE REFINEMENTS FOR REHABICS V4
+   Existing layout and interactions are preserved. */
+
+.rehab-contact {
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.rehab-contact section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.rehab-contact .contact-hero {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.rehab-contact .contact-info-section {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+
+.rehab-contact .contact-enquiry-section,
+.rehab-contact .contact-clinic-section,
+.rehab-contact .contact-faq-section,
+.rehab-contact .contact-social-map-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.rehab-contact .contact-form-card,
+.rehab-contact .contact-social-card,
+.rehab-contact .contact-final-cta {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.rehab-contact .contact-info-card {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.rehab-contact .contact-map-overlay {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.rehab-contact .contact-eyebrow,
+.rehab-contact .contact-info-title,
+.rehab-contact .contact-info-copy > strong,
+.rehab-contact .contact-info-note,
+.rehab-contact .contact-hero-note strong,
+.rehab-contact .contact-hero-note div > span,
+.rehab-contact .contact-image-label strong,
+.rehab-contact .contact-image-label div > span,
+.rehab-contact .contact-benefit h3,
+.rehab-contact .contact-benefit p,
+.rehab-contact .contact-direct-card div > span,
+.rehab-contact .contact-direct-card div > a,
+.rehab-contact .contact-form-kicker,
+.rehab-contact .contact-field label,
+.rehab-contact .contact-field input,
+.rehab-contact .contact-field select,
+.rehab-contact .contact-field textarea,
+.rehab-contact .contact-form-privacy,
+.rehab-contact .contact-form-status p,
+.rehab-contact .contact-clinic-image-caption,
+.rehab-contact .contact-clinic-address strong,
+.rehab-contact .contact-clinic-address p,
+.rehab-contact .contact-social-note,
+.rehab-contact .contact-map-overlay strong,
+.rehab-contact .contact-map-overlay p,
+.rehab-contact .contact-map-overlay a,
+.rehab-contact .contact-faq-heading > div:first-child > p,
+.rehab-contact .contact-faq-help > span,
+.rehab-contact .contact-faq-help > a,
+.rehab-contact .contact-faq-question > span:nth-child(2),
+.rehab-contact .contact-faq-answer p,
+.rehab-contact .contact-btn {
+  font-size: max(12px, 1em);
+}
+
+.rehab-contact .contact-hero-content,
+.rehab-contact .contact-enquiry-layout,
+.rehab-contact .contact-clinic-section,
+.rehab-contact .contact-social-map-section,
+.rehab-contact .contact-info-grid,
+.rehab-contact .contact-faq-grid,
+.rehab-contact .contact-form-grid {
+  min-width: 0;
+}
+
+.rehab-contact .contact-hero-content {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.rehab-contact .contact-enquiry-layout {
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+}
+
+.rehab-contact .contact-clinic-section {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+}
+
+.rehab-contact .contact-social-map-section {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.rehab-contact .contact-hero-copy,
+.rehab-contact .contact-enquiry-copy,
+.rehab-contact .contact-clinic-copy,
+.rehab-contact .contact-social-card,
+.rehab-contact .contact-form-card,
+.rehab-contact .contact-map-card,
+.rehab-contact .contact-faq-item {
+  min-width: 0;
+}
+
+.rehab-contact .contact-info-copy > strong,
+.rehab-contact .contact-direct-card div > a,
+.rehab-contact .contact-field label,
+.rehab-contact .contact-faq-question > span:nth-child(2) {
+  overflow-wrap: anywhere;
+}
+
+.rehab-contact .contact-field input,
+.rehab-contact .contact-field select,
+.rehab-contact .contact-field textarea {
+  max-width: 100%;
+}
+
+.rehab-contact .contact-map-overlay {
+  color: var(--contact-ivory);
+  background: rgba(16, 17, 18, 0.88);
+}
+
+.rehab-contact .contact-map-overlay p {
+  color: var(--contact-muted);
+}
+
+.rehab-contact .contact-final-cta {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1100px) {
+  .rehab-contact .contact-hero-content {
+    gap: 24px;
+  }
+
+  .rehab-contact .contact-hero-copy h1 {
+    font-size: clamp(32px, 4.5vw, 48px);
+    letter-spacing: -1.4px;
+  }
+
+  .rehab-contact .contact-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rehab-contact .contact-info-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .rehab-contact .contact-info-card:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--contact-border);
+  }
+
+  .rehab-contact .contact-enquiry-layout {
+    gap: 24px;
+  }
+
+  .rehab-contact .contact-form-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  .rehab-contact section,
+  .rehab-contact .contact-hero,
+  .rehab-contact .contact-info-section,
+  .rehab-contact .contact-enquiry-section,
+  .rehab-contact .contact-clinic-section,
+  .rehab-contact .contact-social-map-section,
+  .rehab-contact .contact-faq-section {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .rehab-contact .contact-hero-content,
+  .rehab-contact .contact-enquiry-layout,
+  .rehab-contact .contact-clinic-section,
+  .rehab-contact .contact-social-map-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .rehab-contact .contact-hero-copy {
+    padding: 0;
+  }
+
+  .rehab-contact .contact-hero-copy h1 {
+    font-size: clamp(32px, 7.5vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -1px;
+  }
+
+  .rehab-contact .contact-hero-copy > p,
+  .rehab-contact .contact-section-description,
+  .rehab-contact .contact-clinic-copy > p,
+  .rehab-contact .contact-social-card > p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .rehab-contact .contact-hero-visual {
+    min-height: 260px;
+    height: clamp(260px, 62vw, 390px);
+  }
+
+  .rehab-contact .contact-info-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-contact .contact-info-card,
+  .rehab-contact .contact-info-card:nth-child(2) {
+    padding: 16px 14px;
+    border-right: 0;
+    border-bottom: 1px solid var(--contact-border);
+  }
+
+  .rehab-contact .contact-info-card:last-child {
+    border-bottom: 0;
+  }
+
+  .rehab-contact .contact-enquiry-copy h2,
+  .rehab-contact .contact-clinic-copy h2,
+  .rehab-contact .contact-social-card h2,
+  .rehab-contact .contact-faq-heading h2,
+  .rehab-contact .contact-final-copy h2 {
+    font-size: clamp(27px, 6vw, 34px);
+    letter-spacing: -0.6px;
+  }
+
+  .rehab-contact .contact-benefits {
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .rehab-contact .contact-form-card,
+  .rehab-contact .contact-social-card {
+    padding: 18px;
+  }
+
+  .rehab-contact .contact-form-grid {
+    gap: 15px;
+  }
+
+  .rehab-contact .contact-clinic-image {
+    height: clamp(240px, 60vw, 350px);
+    min-height: 240px;
+  }
+
+  .rehab-contact .contact-map-card {
+    min-height: 280px;
+  }
+
+  .rehab-contact .contact-faq-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .rehab-contact .contact-faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-contact .contact-faq-question {
+    min-height: 58px;
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .rehab-contact .contact-faq-answer {
+    padding: 0 14px 16px 53px;
+  }
+
+  .rehab-contact .contact-final-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    margin: 0 20px 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rehab-contact section,
+  .rehab-contact .contact-hero,
+  .rehab-contact .contact-info-section,
+  .rehab-contact .contact-enquiry-section,
+  .rehab-contact .contact-clinic-section,
+  .rehab-contact .contact-social-map-section,
+  .rehab-contact .contact-faq-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .rehab-contact .contact-hero-copy h1 {
+    font-size: clamp(30px, 8vw, 38px);
+  }
+
+  .rehab-contact .contact-hero-actions,
+  .rehab-contact .contact-final-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .rehab-contact .contact-hero-actions .contact-btn,
+  .rehab-contact .contact-final-actions .contact-btn {
+    width: 100%;
+  }
+
+  .rehab-contact .contact-hero-visual {
+    min-height: 235px;
+    height: 70vw;
+  }
+
+  .rehab-contact .contact-image-label {
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .rehab-contact .contact-image-label-icon,
+  .rehab-contact .contact-note-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .rehab-contact .contact-form-card,
+  .rehab-contact .contact-social-card {
+    padding: 16px;
+  }
+
+  .rehab-contact .contact-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rehab-contact .contact-field-full {
+    grid-column: auto;
+  }
+
+  .rehab-contact .contact-form-heading h3 {
+    font-size: 18px;
+  }
+
+  .rehab-contact .contact-map-card {
+    min-height: 300px;
+  }
+
+  .rehab-contact .contact-map-overlay {
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .rehab-contact .contact-faq-question {
+    gap: 8px;
+    padding: 12px 10px;
+  }
+
+  .rehab-contact .contact-faq-number {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+
+  .rehab-contact .contact-faq-answer {
+    padding-left: 46px;
+  }
+
+  .rehab-contact .contact-final-cta {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .rehab-contact .contact-hero-copy h1 {
+    font-size: 29px;
+  }
+
+  .rehab-contact .contact-form-heading {
+    align-items: flex-start;
+  }
+
+  .rehab-contact .contact-form-heading-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rehab-contact *,
+  .rehab-contact *::before,
+  .rehab-contact *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
